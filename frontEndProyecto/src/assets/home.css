@@ -1,0 +1,10 @@
+.banner img {
+    height: 70vh; /* Ajusta la altura máxima de la imagen del banner */
+    width: 100%;
+    margin: 5px;
+  }
+  .noticias {
+    display: flex;
+    justify-content: space-around; /* Otra opción es usar 'space-around' */
+    flex-wrap: wrap; /* Permite que las cartas se envuelvan a la siguiente fila si no hay suficiente espacio */
+  }
