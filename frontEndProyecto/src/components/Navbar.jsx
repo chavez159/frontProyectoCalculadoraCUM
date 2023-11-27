@@ -4,7 +4,15 @@ import { FaNewspaper } from "react-icons/fa";
 import { CiCalculator1 } from "react-icons/ci";
 import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 export function NavBar() {
+    
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate('/login');
+        }
+    }, []);
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();

@@ -11,7 +11,14 @@ export function Home() {
             const response = await traerNoticias(token);
             const data = await response.json();
             console.log(data);
+            if(response.status === 400){
+                localStorage.clear();
+                window.location.href = '/login';
+            }else{
+
+            
             setNoticias(data);
+            }
         }
         getNoticias();
     }, []);
