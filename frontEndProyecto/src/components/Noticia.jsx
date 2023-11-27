@@ -1,5 +1,5 @@
 
-import '../assets/noticiaCard.css';
+import '../assets/noticiaCard.css'
 export const Noticias = ({ title, content, imageUrl }) => {
     return (
       <div className="card">

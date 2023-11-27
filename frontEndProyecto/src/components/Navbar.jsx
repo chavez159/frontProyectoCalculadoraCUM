@@ -6,6 +6,11 @@ import { FaQuestion } from "react-icons/fa";
 import { useNavigate } from 'react-router';
 export function NavBar() {
     const navigate = useNavigate();
+    const logout = () => {
+        localStorage.clear();
+        navigate('/login');
+    }
+
     return (
         <>
             <nav className="navbar">
@@ -13,8 +18,8 @@ export function NavBar() {
                 <ul className="nav-links">
                     <li><a onClick={() => {navigate('/')}} style={{cursor:"pointer"}}><FaNewspaper/> Noticias</a></li>
                     <li><a href="calculadora"><CiCalculator1/> Calculadora</a></li>
-                    <li><a href="#"><FaQuestion/> Preguntas y respuestas</a></li>
-                    <li><a href="#"><CiUser></CiUser> Cerrar sesion</a></li>
+                    <li><a onClick={() => {navigate('/FAQ')}}  style={{cursor:"pointer"}}><FaQuestion/> Preguntas y respuestas</a></li>
+                    <li><a onClick={logout}  style={{cursor:"pointer"}}><CiUser></CiUser> Cerrar sesion</a></li>
                 </ul>
             </nav>
         </>

@@ -36,8 +36,8 @@ export async function register (data) {
 }
 
 
-export async function crearNoticia (data) {
-    const response = await fetch(`${BASE_URL}api/users/register`,{
+export async function crearPregunta (data) {
+    const response = await fetch(`${BASE_URL}api/faq/crearPregunta`,{
         "method": "POST",
         headers: {
             "Authorization": `Bearer ${data.token}`,
@@ -45,12 +45,11 @@ export async function crearNoticia (data) {
             },
             body: JSON.stringify({
           
-              nombre: data.nombre,
-              usuario: data.usuario,
-              correo: data.correo
+              titulo: data.titulo,
+              cuerpo: data.cuerpo,
              })
     })
-    const respuesta = await response;
+    const respuesta = await response.status;
     return respuesta
 }
 
@@ -63,5 +62,54 @@ export async function traerNoticias (token) {
             },
     })
     const respuesta = await response;
+    return respuesta
+}
+export async function traerPreguntas (token) {
+    const response = await fetch(`${BASE_URL}api/faq/traerPreguntas`,{
+        "method": "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+            },
+    })
+    const respuesta = await response.json();
+    return respuesta
+}
+export async function traerMisPreguntas (token) {
+    const response = await fetch(`${BASE_URL}api/faq/misPreguntas`,{
+        "method": "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+            },
+    })
+    const respuesta = await response.json();
+    return respuesta
+}
+export async function crearComentario (data) {
+    const response = await fetch(`${BASE_URL}api/faq/agregarRespuesta`,{
+        "method": "POST",
+        headers: {
+            "Authorization": `Bearer ${data.token}`,
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+          
+              id: data.id,
+              respuesta: data.comentario,
+             })
+    })
+    const respuesta = await response.status
+    return respuesta
+}
+export async function eliminarMiPregunta (data) {
+    const response = await fetch(`${BASE_URL}api/faq/eliminarPregunta/${data.id}`,{
+        "method": "GET",
+        headers: {
+            "Authorization": `Bearer ${data.token}`,
+            "Content-Type": "application/json",
+            }
+    })
+    const respuesta = await response.status
     return respuesta
 } 

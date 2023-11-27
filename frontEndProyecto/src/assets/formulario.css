@@ -1,0 +1,13 @@
+/* Formulario.css */
+.formulario-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .formulario {
+    text-align: left;
+    flex-direction: column;
+  }
+  
