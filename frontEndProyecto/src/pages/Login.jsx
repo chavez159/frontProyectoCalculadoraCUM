@@ -51,6 +51,7 @@ export function Login() {
                         cookiePolicy={"single_host_policy"}
                         className="w-full bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 transition duration-300"
                     />
+                    <a href="/register" style={{marginTop:"10px"}}>Registrarse</a>
                 </div>
             </div>
         </>
