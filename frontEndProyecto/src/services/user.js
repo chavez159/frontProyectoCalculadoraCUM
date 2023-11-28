@@ -112,4 +112,45 @@ export async function eliminarMiPregunta (data) {
     })
     const respuesta = await response.status
     return respuesta
+}
+export async function verificarRol (token) {
+    const response = await fetch(`${BASE_URL}api/users/revisarRol`,{
+        "method": "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+            }
+    })
+    const respuesta = await response.json()
+    return respuesta
 } 
+export async function eliminarNoticia (data) {
+    const response = await fetch(`${BASE_URL}api/noticias/eliminarNoticia/${data.id}`,{
+        "method": "PATCH",
+        headers: {
+            "Authorization": `Bearer ${data.token}`,
+            "Content-Type": "application/json",
+            }
+    })
+    const respuesta = await response.status
+    return respuesta
+} 
+
+export async function crearNoticia (data) {
+    const response = await fetch(`${BASE_URL}api/noticias/crearNoticia`,{
+        "method": "POST",
+        headers: {
+            "Authorization": `Bearer ${data.token}`,
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+          
+              titulo: data.titulo,
+              cuerpo: data.cuerpo,
+              imagen: data.imagen,
+              estado: 1
+             })
+    })
+    const respuesta = await response.status
+    return respuesta
+}

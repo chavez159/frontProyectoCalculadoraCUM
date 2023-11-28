@@ -7,6 +7,8 @@ import { Calculadora } from "../pages/Calculadora";
 import { FAQ } from "../pages/FAQ";
 import { CrearFAQ } from "../pages/CrearFAQ";
 import { MisFAQ } from "../pages/misFAQ";
+import { AdminPregunta } from "../pages/AdminPregunta";
+import { CrearNoticia } from "../pages/AdminCrearNoticia";
 
 
 
@@ -23,6 +25,8 @@ const Location = () => {
             <Route path="/FAQ" element={<FAQ/>} />
             <Route path="/crearFAQ" element={<CrearFAQ/>} />
             <Route path="/misFAQ" element={<MisFAQ/>} />
+            <Route path="/adminPreguntas" element={<AdminPregunta/>} />
+            <Route path="/crearNoticia" element={<CrearNoticia/>} />
         </Routes>
     );
 };
