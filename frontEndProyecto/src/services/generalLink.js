@@ -1,1 +1,1 @@
-export const link =  "https://weak-gold-bream-sari.cyclic.app/"
+export const link =  "https://charming-cummerbund-fish.cyclic.app/"

@@ -4,6 +4,8 @@ import { jwtDecode } from 'jwt-decode';
 import { login } from '../services/user';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import '../assets/login.css'; 
+
 export function Login() {
     const navigate = useNavigate();
     const handleLogin = async (data) => {

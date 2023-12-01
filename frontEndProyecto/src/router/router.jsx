@@ -9,6 +9,7 @@ import { CrearFAQ } from "../pages/CrearFAQ";
 import { MisFAQ } from "../pages/misFAQ";
 import { AdminPregunta } from "../pages/AdminPregunta";
 import { CrearNoticia } from "../pages/AdminCrearNoticia";
+import { AdminBorrarPregunta } from "../pages/AdminBorrarPregunta";
 
 
 
@@ -26,6 +27,7 @@ const Location = () => {
             <Route path="/crearFAQ" element={<CrearFAQ/>} />
             <Route path="/misFAQ" element={<MisFAQ/>} />
             <Route path="/adminPreguntas" element={<AdminPregunta/>} />
+            <Route path="/adminModerador" element={<AdminBorrarPregunta/>} />
             <Route path="/crearNoticia" element={<CrearNoticia/>} />
         </Routes>
     );

@@ -44,6 +44,7 @@ export function NavBar() {
                     {show && <li><a onClick={() => {navigate('/adminPreguntas')}} style={{cursor:"pointer"}}><FaNewspaper/> Administrar noticias</a></li>}
                     <li><a href="calculadora"><CiCalculator1/> Calculadora</a></li>
                     <li><a onClick={() => {navigate('/FAQ')}}  style={{cursor:"pointer"}}><FaQuestion/> Preguntas y respuestas</a></li>
+                    {show && <li><a onClick={() => {navigate('/adminModerador')}} style={{cursor:"pointer"}}><FaNewspaper/> Moderar preguntas</a></li>}
                     <li><a onClick={logout}  style={{cursor:"pointer"}}><CiUser></CiUser> Cerrar sesion</a></li>
                 </ul>
             </nav>
