@@ -9,7 +9,7 @@ import { verificarRol } from '../services/user';
 export function NavBar() {
     
     const token = localStorage.getItem('token');
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     useEffect(() => {
         if (!token) {
             navigate('/login');
@@ -40,12 +40,12 @@ export function NavBar() {
             <nav className="navbar">
                 <div className="logo" onClick={() => {navigate('/')}} style={{cursor:"pointer"}}>Portal de estudiantes</div>
                 <ul className="nav-links">
-                    <li><a onClick={() => {navigate('/')}} style={{cursor:"pointer"}}><FaNewspaper/> Noticias</a></li>
-                    {show && <li><a onClick={() => {navigate('/adminPreguntas')}} style={{cursor:"pointer"}}><FaNewspaper/> Administrar noticias</a></li>}
-                    <li><a href="calculadora"><CiCalculator1/> Calculadora</a></li>
-                    <li><a onClick={() => {navigate('/FAQ')}}  style={{cursor:"pointer"}}><FaQuestion/> Preguntas y respuestas</a></li>
-                    {show && <li><a onClick={() => {navigate('/adminModerador')}} style={{cursor:"pointer"}}><FaNewspaper/> Moderar preguntas</a></li>}
-                    <li><a onClick={logout}  style={{cursor:"pointer"}}><CiUser></CiUser> Cerrar sesion</a></li>
+                    <li  id='noti'><a onClick={() => {navigate('/')}} style={{cursor:"pointer"}}><FaNewspaper/> Noticias</a></li>
+                    {show && <li id='adminoti'><a  onClick={() => {navigate('/adminPreguntas')}} style={{cursor:"pointer"}}><FaNewspaper/> Administrar noticias</a></li>}
+                    <li id='calc'><a  href="calculadora"><CiCalculator1/> Calculadora</a></li>
+                    <li id='faq'><a  onClick={() => {navigate('/FAQ')}}  style={{cursor:"pointer"}}><FaQuestion/> Preguntas y respuestas</a></li>
+                    {show && <li id='modfaq'><a  onClick={() => {navigate('/adminModerador')}} style={{cursor:"pointer"}}><FaNewspaper/> Moderar preguntas</a></li>}
+                    <li  id='cerrar'><a onClick={logout}  style={{cursor:"pointer"}}><CiUser></CiUser> Cerrar sesion</a></li>
                 </ul>
             </nav>
         </>

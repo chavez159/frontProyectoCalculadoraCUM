@@ -21,6 +21,7 @@ export function Home() {
             }
         }
         getNoticias();
+      
     }, []);
     return (
         <div>

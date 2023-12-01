@@ -13,6 +13,7 @@ export function AdminBorrarPregunta() {
     const [reload, setReload] = useState(false);
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
+   
     useEffect(() => {
         const getPreguntas = async () => {
             const data = await traerPreguntas(token);
@@ -20,6 +21,7 @@ export function AdminBorrarPregunta() {
             setPreguntas(data);
         }
         getPreguntas();
+       
     }, [reload]);
 
     const recibirComentario = async (comentario, id) => {
@@ -92,7 +94,7 @@ export function AdminBorrarPregunta() {
             <NavBar />
 
             <div>
-                <center><h1>Moderar preguntas</h1></center>
+                <center><h1 style={{marginTop:"20px"}}>Moderar preguntas</h1></center>
                 <div className="noticias">
                     {preguntas.map((noticia) => {
                         return (

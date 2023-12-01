@@ -76,7 +76,7 @@ export function Calculadora() {
         <>
             <NavBar />
             <div className="container">
-                <h1>Calculadora</h1>
+                <h1 style={{marginTop:"55px"}}>Calculadora</h1>
                 <h3>Calcula tu nota final</h3>
                 {Array(lenght).fill(0).map((number, index) => (
 

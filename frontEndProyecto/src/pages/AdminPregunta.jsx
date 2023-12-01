@@ -26,6 +26,7 @@ export function AdminPregunta(){
             }
         }
         getNoticias();
+       
     }, [recharge]);
     const receiveEliminar = async(id) => {
         const object = {
